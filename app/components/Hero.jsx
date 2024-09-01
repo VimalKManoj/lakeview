@@ -27,7 +27,7 @@ const Hero = () => {
         height={3000}
         className="-z-10 absolute  w-full h-full object-cover rounded-3xl "
       />
-      <div className="flex flex-col w-[80%] pl-14 select-none overflow-hidden">
+      <div className="flex flex-col w-[80%] pl-14 select-none ">
         <h2
           className={`${poppins.className} relative z-50 xl:text-7xl 2xl:text-8xl font-semibold text-white pt-20 `}
         >
