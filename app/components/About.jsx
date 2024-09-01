@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
+import { useAnimation, useInView, motion } from "framer-motion";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,6 +12,19 @@ const poppins = Poppins({
 });
 
 const About = () => {
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, { once: true, threshold: 0.5 });
+
+  const mainControls = useAnimation();
+  const scaleControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+      scaleControls.start("visible");
+    }
+  }, [isInView, mainControls]);
   const [selectedCategory, setSelectedCategory] = useState("Quality and Care");
 
   const categories = {
@@ -49,26 +63,63 @@ const About = () => {
     <div
       className={`${poppins.className} z-10 min-h-screen  w-[83vw] items-center justify-center text-sm lg:flex flex-col mb-20`}
       id="about"
+      ref={ref}
     >
       <div className="relative w-full h-[45vh] rounded-3xl overflow-hidden flex flex-col p-6 2xl:mt-14">
-        <h2 className="self-start font-normal text-sm px-3 py-2 my-3 bg-[#FDD604] text-white rounded-3xl  ">
+        <motion.h2
+          className="self-start font-normal text-sm px-3 py-2 my-3 bg-[#FDD604] text-white rounded-3xl  "
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          animate={mainControls}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           About Us
-        </h2>
+        </motion.h2>
         <div className="flex  h-full  justify-center items-start  ">
-          <h2 className="xl:text-5xl 2xl:text-6xl w-1/2 mr-3">
+          <motion.h2
+            className="xl:text-5xl 2xl:text-6xl w-1/2 mr-3"
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             Your Premier Destination for Rare and Exotic Aquatic Fishes.
-          </h2>
-          <h2 className="xl:text-base 2xl:text-lg  text-gray-950/70 w-1/2 ">
+          </motion.h2>
+          <motion.h2
+            className="xl:text-base 2xl:text-lg  text-gray-950/70 w-1/2 "
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             At <span className="">Lakeview Aquatics</span>, we are passionate
             about the underwater world and dedicated to bringing the finest and
             rarest aquatic species to enthusiasts like you. Our mission is to
             offer an unparalleled selection of exotic and hard-to-find fish,
             ensuring that your aquarium stands out as a vibrant, diverse, and
             thriving ecosystem.
-          </h2>
+          </motion.h2>
         </div>
       </div>
-      <div className="w-full h-[45vh] bg-gray-200/40  rounded-3xl flex p-6">
+      <motion.div
+        className="w-full h-[45vh] bg-gray-200/40  rounded-3xl flex p-6"
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 1 }}
+      >
         <div className="w-1/3 h-full">
           <Image
             src={categories[selectedCategory].image}
@@ -105,44 +156,10 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 export default About;
 
-{
-  /* <div
-className={`${poppins.className} h-full bg-gradient-to-b flex justify-center items-center  text-4xl flex-col `}
->
-<div className="w-full flex justify-between items-center text-black">
-  <div className="relative h-[90%] w-full rounded-3xl  mt-10 ">
-    <Image
-      src="/images/Glowing.jpg"
-      width={1000}
-      height={1000}
-      alt="Fish"
-      className="h-[35rem] w-full rounded-full object-cover "
-    />{" "}
-   
-  </div>
-  <div className=" flex flex-col h-full justify-around items-center ">
-    <h2 className="self-start font-normal text-sm px-3 py-2 bg-[#FDD604] text-white rounded-3xl mx-10">
-      About Us
-    </h2>
-    <h2 className="mx-10 text-6xl pt-10">
-      Your Premier Destination for Rare and Exotic Aquatic Fishes.
-    </h2>
-    <h2 className="text-lg flex-1 p-10 text-gray-950/70">
-      At Lakeview Aquatics, we are passionate about the underwater world
-      and dedicated to bringing the finest and rarest aquatic species to
-      enthusiasts like you. Our mission is to offer an unparalleled
-      selection of exotic and hard-to-find fish, ensuring that your
-      aquarium stands out as a vibrant, diverse, and thriving ecosystem.
-    </h2>
-   
-  </div>
-</div>
-</div> */
-}

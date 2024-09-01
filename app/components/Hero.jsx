@@ -41,8 +41,8 @@ const Hero = () => {
           <span className="absolute z-50 opacity-65 ">els</span>
         </h2>
         <motion.button
-          initial={{ translateY: 100 }}
-          animate={{ translateY: 0 }}
+          initial={{ translateY: 50 ,opacity:0 }}
+          animate={{ translateY: 0 ,opacity:1 }}
           transition={{ duration: 0.7, delay: 0.8, ease: "easeInOut" }}
           className="text-white self-start px-10 py-3 rounded-3xl bg-white/50"
           type="button"

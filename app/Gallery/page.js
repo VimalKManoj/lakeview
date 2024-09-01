@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import FishCard from "../components/FishCard";
 import { Poppins } from "next/font/google";
 import GalleryHeader from "../components/GalleryHeader";
+import { useAnimation, useInView, motion } from "framer-motion";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,6 +13,19 @@ const poppins = Poppins({
 });
 
 const page = () => {
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, { once: true, threshold: 0.5 });
+
+  const mainControls = useAnimation();
+  const scaleControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+      scaleControls.start("visible");
+    }
+  }, [isInView, mainControls]);
   const products = [
     {
       id: 1,
@@ -178,28 +193,59 @@ const page = () => {
     <>
       <div className="flex min-h-screen flex-col justify-center items-center xl:p-12 2xl:p-24 w-full">
         <GalleryHeader />
-        <div className="z-10  w-full items-center justify-center text-sm lg:flex flex-col ">
-          <h2
+        <div
+          className="z-10  w-full items-center justify-center text-sm lg:flex flex-col "
+          ref={ref}
+        >
+          <motion.h2
             className={`${poppins.className} xl:text-5xl 2xl:text-6xl font-semibold xl:p-14 2xl:p-6 2xl:mb-2`}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
             Marine Marvels: A Gallery of Fish Species
-          </h2>
-          <h2 className="w-full px-20 mb-10 text-2xl font-light ">
+          </motion.h2>
+          <motion.h2
+            className="w-full px-20 mb-10 text-2xl font-light "
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             Discover the stunning diversity of marine life in our carefully
             curated gallery, featuring rare and exotic fish species from around
             the world. Let these vibrant aquatic wonders inspire your next
             aquarium masterpiece.
-          </h2>
+          </motion.h2>
           <div className="flex w-full flex-wrap justify-center items-center gap-2 2xl:gap-5">
-            {products.map((product) => {
+            {products.map((product, index) => {
+              const delay = 0.6 + index * 0.2; // Calculate delay based on index
+
               return (
-                <FishCard
+                <motion.div
                   key={product.id}
-                  id={product.id}
-                  image={product.image}
-                  name={product.name}
-                  description={product.description}
-                />
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 0.5, delay }}
+                >
+                  <FishCard
+                    id={product.id}
+                    image={product.image}
+                    name={product.name}
+                    description={product.description}
+                  />
+                </motion.div>
               );
             })}
           </div>
