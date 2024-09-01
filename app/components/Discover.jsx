@@ -40,7 +40,7 @@ const Discover = () => {
         >
           Discover our top exotic picks
         </h2>
-        <div className="w-2/3 rounded-3xl h-[70vh] " style={{ opacity }}>
+        <div className="w-2/3 rounded-3xl h-[70vh] relative" style={{ opacity }}>
           <motion.div style={{ opacity, translateX }} className="w-full ">
             <Image
               src="/svg/angel.svg"
@@ -51,7 +51,7 @@ const Discover = () => {
           </motion.div>
           <motion.div
             style={{ opacity: opacity2, translateX: translateX2 }}
-            className="w-full absolute top-56 "
+            className="w-full absolute top-10 "
           >
             <Image
               src="/svg/redhead.svg"
@@ -76,7 +76,7 @@ const Discover = () => {
             </h2>
           </motion.div>
           <motion.div
-            className="text-white absolute xl:bottom-16 2xl:bottom-44 w-2/3"
+            className="text-white absolute xl:bottom-20 2xl:bottom-32  "
             style={{ opacity:opacity2 }}
           >
             <h2 className="text-lg font-semibold mb-4">Red Head Tapajos</h2>
