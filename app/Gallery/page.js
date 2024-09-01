@@ -194,6 +194,7 @@ const page = () => {
             {products.map((product) => {
               return (
                 <FishCard
+                  key={product.id}
                   id={product.id}
                   image={product.image}
                   name={product.name}
