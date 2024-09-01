@@ -12,7 +12,7 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const page = () => {
+const Page = () => {
   const ref = useRef(null);
 
   const isInView = useInView(ref, { once: true, threshold: 0.5 });
@@ -255,4 +255,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

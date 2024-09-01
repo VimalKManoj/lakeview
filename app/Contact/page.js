@@ -10,7 +10,7 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const page = () => {
+const Page = () => {
   return (
     <div
       className={` ${poppins.className} flex min-h-screen flex-col justify-center items-center 2xl:p-24 w-full`}
@@ -111,4 +111,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
