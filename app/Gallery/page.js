@@ -191,7 +191,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex min-h-screen flex-col justify-center items-center xl:p-12 2xl:p-24 w-full mt-10 md:mt-0">
+      <div className="flex min-h-screen flex-col justify-center items-center xl:p-12 2xl:p-16 2xl:pt-24 w-full mt-10 md:mt-0">
         <GalleryHeader />
         <div
           className="z-10  w-full items-center justify-center text-sm lg:flex flex-col "
@@ -207,7 +207,7 @@ const Page = () => {
             animate={mainControls}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Marine Marvels: A Gallery of Fish Species
+            Fresh Water Marvels: A Gallery of Fish Species
           </motion.h2>
           <motion.h2
             className="w-full p-3 px-5 text-base md:px-20 md:mb-10 2xl:text-2xl xl:text-xl font-light text-center md:text-left "
