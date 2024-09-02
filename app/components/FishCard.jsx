@@ -12,7 +12,7 @@ const poppins = Poppins({
 const FishCard = ({ name, image, description }) => {
   return (
     <div className={`${poppins.className}`}>
-      <div className="group relative rounded-3xl border-2  overflow-hidden 2xl:h-96 2xl:w-80 xl:h-80 xl:w-72 transition-shadow hover:shadow-xl hover:shadow-black/30 cursor-pointer ">
+      <div className="group relative rounded-3xl border-2  overflow-hidden w-30 2xl:h-96 2xl:w-80 xl:h-80 xl:w-72 transition-shadow hover:shadow-xl hover:shadow-black/30 cursor-pointer ">
         <Image
           src={image}
           alt={name}

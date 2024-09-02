@@ -23,7 +23,7 @@ const Discover = () => {
     [2100, 2300, 3000, 3200],
     [0, 1, 1, 1]
   );
-  const translateX2 = useTransform(scrollY, [2000, 3400], [100, 800]);
+  const translateX2 = useTransform(scrollY, [2000, 3000], [100, 380]);
   return (
     <div
       className="hidden relative w-full md:flex justify-between z-20"

@@ -191,14 +191,14 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex min-h-screen flex-col justify-center items-center xl:p-12 2xl:p-24 w-full">
+      <div className="flex min-h-screen flex-col justify-center items-center xl:p-12 2xl:p-24 w-full mt-10 md:mt-0">
         <GalleryHeader />
         <div
           className="z-10  w-full items-center justify-center text-sm lg:flex flex-col "
           ref={ref}
         >
           <motion.h2
-            className={`${poppins.className} xl:text-5xl 2xl:text-6xl font-semibold xl:p-14 2xl:p-6 2xl:mb-2`}
+            className={`${poppins.className} text-3xl text-center md:text-left xl:text-5xl 2xl:text-6xl font-semibold md:pt-14 2xl:p-6 2xl:mb-2 mt-10 md:mt-0 p-3 `}
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
@@ -210,7 +210,7 @@ const Page = () => {
             Marine Marvels: A Gallery of Fish Species
           </motion.h2>
           <motion.h2
-            className="w-full px-20 mb-10 text-2xl font-light "
+            className="w-full p-3 px-5 text-base md:px-20 md:mb-10 2xl:text-2xl xl:text-xl font-light text-center md:text-left "
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
@@ -224,7 +224,7 @@ const Page = () => {
             the world. Let these vibrant aquatic wonders inspire your next
             aquarium masterpiece.
           </motion.h2>
-          <div className="flex w-full flex-wrap justify-center items-center gap-2 2xl:gap-5">
+          <div className="p-4 md:p-0 flex w-full flex-wrap justify-center items-center gap-2 2xl:gap-5">
             {products.map((product, index) => {
               const delay = 0.6 + index * 0.2; // Calculate delay based on index
 

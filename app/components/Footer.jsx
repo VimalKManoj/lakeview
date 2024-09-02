@@ -12,11 +12,10 @@ const poppins = Poppins({
 const Footer = () => {
   return (
     <footer
-      className={`${poppins.className} relative bg-slate-200/50 mt-14  py-10 px-8 rounded-t-3xl`}
+      className={`${poppins.className} w-full overflow-hidden md:overflow-auto relative bg-slate-200/50 mt-14  md:py-10 md:px-8 rounded-t-3xl`}
     >
-      <div className="flex justify-between items-center mb-8">
-        <div className="flex space-x-4 ">
-          
+      <div className="flex justify-between items-center mb-8 flex-col md:flex-row">
+        <div className="flex space-x-4 mt-6 md:mt-0">
           <a
             href="#"
             className="flex items-center space-x-1 text-black hover:underline"
@@ -32,14 +31,19 @@ const Footer = () => {
             <span>INSTAGRAM</span>
           </a>
         </div>
-        <Image src="/images/Logo_2.png" width={220} height={50}  className="ml-40 2xl:w-56 xl:w-36"/>
-        <div className="text-black">
+        <Image
+          src="/images/Logo_2.png"
+          width={220}
+          height={50}
+          className="w-24 md:ml-40 2xl:w-56 xl:w-36 mt-4 md:mt-0"
+        />
+        <div className="text-black text-center mt-4 px-20">
           <a href="mailto:info@lakeviewfish.com">info@lakeviewaquatics.com</a> •
           +91 8123578889
         </div>
       </div>
-      {/* <h1 class="text-5xl font-bold text-black">Lakeview Aquatics</h1> */}
-      <p className="text-sm text-black mt-4">
+
+      <p className="text-sm text-black mt-4 text-center mb-4">
         © 2024 All rights reserved to Lakeview Aquatics.
       </p>
     </footer>

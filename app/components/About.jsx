@@ -61,13 +61,13 @@ const About = () => {
   };
   return (
     <div
-      className={`${poppins.className} z-10 min-h-screen  w-[83vw] items-center justify-center text-sm lg:flex flex-col mb-20`}
+      className={`${poppins.className} z-10 min-h-screen w-full md:w-[83vw] items-center justify-center text-sm lg:flex flex-col md:mb-20`}
       id="about"
       ref={ref}
     >
-      <div className="relative w-full h-[45vh] rounded-3xl overflow-hidden flex flex-col p-6 2xl:mt-14">
+      <div className="relative w-full  md:h-[45vh] rounded-3xl  overflow-hidden flex flex-col p-3 md:p-6 2xl:mt-14">
         <motion.h2
-          className="self-start font-normal text-sm px-3 py-2 my-3 bg-[#FDD604] text-white rounded-3xl  "
+          className="self-center md:self-start  font-normal text-sm px-3 py-2 md:my-3 bg-[#FDD604] text-white rounded-3xl  "
           variants={{
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
@@ -78,9 +78,9 @@ const About = () => {
         >
           About Us
         </motion.h2>
-        <div className="flex  h-full  justify-center items-start  ">
+        <div className="flex text-center md:text-left h-full flex-col md:flex-row  justify-center items-start  mt-3 md:mt-0">
           <motion.h2
-            className="xl:text-5xl 2xl:text-6xl w-1/2 mr-3"
+            className="text-2xl xl:text-5xl 2xl:text-6xl md:w-1/2 mr-3 select-none"
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
@@ -92,7 +92,7 @@ const About = () => {
             Your Premier Destination for Rare and Exotic Aquatic Fishes.
           </motion.h2>
           <motion.h2
-            className="xl:text-base 2xl:text-lg  text-gray-950/70 w-1/2 "
+            className="xl:text-base 2xl:text-lg  text-gray-950/70 md:w-1/2 pt-4 md:pt-0 select-none "
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
@@ -111,7 +111,7 @@ const About = () => {
         </div>
       </div>
       <motion.div
-        className="w-full h-[45vh] bg-gray-200/40  rounded-3xl flex p-6"
+        className="w-full md:h-[45vh] bg-gray-200/40 flex-col md:flex-row  rounded-3xl flex p-2 md:p-6 mt-4 md:mt-0"
         variants={{
           hidden: { opacity: 0, y: 50 },
           visible: { opacity: 1, y: 0 },
@@ -120,7 +120,7 @@ const About = () => {
         animate={mainControls}
         transition={{ duration: 0.5, delay: 1 }}
       >
-        <div className="w-1/3 h-full">
+        <div className="md:w-1/3 h-[250px] md:h-full">
           <Image
             src={categories[selectedCategory].image}
             alt={selectedCategory}
@@ -129,13 +129,13 @@ const About = () => {
             className="w-full h-full object-cover rounded-3xl"
           />
         </div>
-        <div className="w-2/3 h-full pl-6">
-          <div className="justify-between  mb-6 flex space-x-4">
+        <div className="md:w-2/3 h-full md:pl-6">
+          <div className="mt-6 md:mt-4 justify-between space-x-1  mb-6 flex md:space-x-4 flex-wrap md:flex-nowrap">
             {Object.keys(categories).map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm ${
+                className={`w-[150px] px-4 py-2 rounded-full text-sm m-2 md:mt-0 ${
                   selectedCategory === category
                     ? "border-2 border-black  text-black font-semibold"
                     : "bg-gray-200 text-gray-800"
@@ -147,10 +147,10 @@ const About = () => {
           </div>
           <div className="about-us-section">
             <div className="content-above-buttons">
-              <h2 className="text-2xl font-medium pt-2">
+              <h2 className="text-2xl font-medium pt-2 text-center md:text-left">
                 {categories[selectedCategory].title}
               </h2>
-              <p className=" xl:text-base 2xl:text-lg text-gray-700 mt-2 text-pretty">
+              <p className=" xl:text-base 2xl:text-lg text-gray-700 mt-2 text-center md:text-left mb-6">
                 {categories[selectedCategory].description}
               </p>
             </div>
