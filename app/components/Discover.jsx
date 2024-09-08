@@ -76,7 +76,7 @@ const Discover = () => {
             </h2>
           </motion.div>
           <motion.div
-            className="text-white absolute xl:bottom-20 2xl:bottom-32  "
+            className="text-white absolute md:bottom-16 xl:bottom-20 2xl:bottom-32  "
             style={{ opacity:opacity2 }}
           >
             <h2 className="text-lg font-semibold mb-4">Red Head Tapajos</h2>

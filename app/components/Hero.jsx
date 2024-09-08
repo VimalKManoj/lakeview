@@ -29,13 +29,13 @@ const Hero = () => {
       />
       <div className=" hidden md:flex flex-col w-[80%] pl-14 select-none ">
         <h2
-          className={`${poppins.className}  relative z-50 xl:text-7xl 2xl:text-8xl font-semibold text-white pt-20 `}
+          className={`${poppins.className}  relative z-50 md:text-7xl 2xl:text-8xl font-semibold text-white pt-20 `}
         >
           {" "}
           Uncover Nature’<span className="absolute z-50 opacity-65 ">s</span>
         </h2>
         <h2
-          className={`${poppins.className} relative z-50 xl:text-7xl 2xl:text-8xl font-semibold text-white pt-4 pb-20`}
+          className={`${poppins.className} relative z-50 md:text-7xl 2xl:text-8xl font-semibold text-white pt-4 pb-20`}
         >
           Underwater Jew
           <span className="absolute z-50 opacity-65 ">els</span>
@@ -52,7 +52,7 @@ const Hero = () => {
         </motion.button>
       </div>
 
-      <div className="relative top-20 md:top-0 md:right-24 z-20 md:w-1/2 h-1/2">
+      <div className="relative top-20 md:-top-10 xl:-top-20 md:right-28 z-20 md:w-1/2 h-1/2">
         <Image
           src="/images/hero.png"
           width={1000}
