@@ -12,6 +12,7 @@ const GalleryHeader = () => {
         <div className="flex gap-10 px-20">
           <Link href="/#about">About Us</Link>
           <Link href="/Gallery">Gallery</Link>
+          <Link href="/Service">Our Services</Link>
           <Link href="/Contact">Contact Us</Link>
         </div>
       </div>

@@ -36,7 +36,12 @@ const MobileNavBar = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex flex-col items-center py-4 space-y-4"
         >
-          <li className="text-lg p-3 border-b-2 text-center w-[60%]">
+           <li className="text-lg p-3  text-center w-[60%]">
+            <Link href="/Service" onClick={toggleMenu}>
+              Our Services
+            </Link>
+          </li>
+          <li className="text-lg p-3 border-y-2 text-center w-[60%]">
             <Link href="/Gallery" onClick={toggleMenu}>
               Gallery
             </Link>
@@ -46,6 +51,7 @@ const MobileNavBar = () => {
               Contact Us
             </Link>
           </li>
+         
         </motion.ul>
       </motion.div>
     </nav>

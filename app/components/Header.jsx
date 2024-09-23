@@ -20,7 +20,6 @@ const Header = () => {
       viewportHeight * 2.06,
       viewportHeight * 2.7,
       viewportHeight * 5.38,
-
     ],
 
     [
@@ -29,7 +28,6 @@ const Header = () => {
       "black",
       "rgba(255 ,255 ,255 , 1)",
       "rgba(255 ,255 ,255 , 1)",
-     
     ]
   );
 
@@ -49,7 +47,7 @@ const Header = () => {
     <div className="hidden md:block fixed top-0 z-50 w-full  px-10 py-2 text-white">
       <motion.div
         className="w-full  h-full flex justify-between items-center  rounded-3xl p-2  pt-4 text-gray-850"
-        style={{ color ,padding , paddingTop }}
+        style={{ color, padding, paddingTop }}
       >
         <Link className="font-bold px-16" href="/">
           <Image src="/images/Logo.png" width={200} height={200} />
@@ -57,6 +55,7 @@ const Header = () => {
         <div className="flex gap-10 px-20">
           <Link href="/#about">About Us</Link>
           <Link href="/Gallery">Gallery</Link>
+          <Link href="/Service">Our Services</Link>
           <Link href="/Contact">Contact Us</Link>
         </div>
       </motion.div>

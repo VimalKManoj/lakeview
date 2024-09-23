@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { useAnimation, useInView, motion } from "framer-motion";
+import { categories } from "../constants";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,38 +28,6 @@ const About = () => {
   }, [isInView, mainControls]);
   const [selectedCategory, setSelectedCategory] = useState("Quality and Care");
 
-  const categories = {
-    "Quality and Care": {
-      title: "Uncompromising Quality, Unwavering Care",
-      description:
-        "Our journey began with a deep love for aquatic life and a desire to provide fellow hobbyists with access to the best and most unique fish available. We take pride in offering only the healthiest and most beautiful specimens, sourced from reputable breeders and suppliers around the globe. Every fish in our care is treated with the utmost respect, provided with optimal living conditions.",
-      image: "/images/fish.jpg",
-    },
-    "Exceptional Selection": {
-      title: "Curated for Perfection: Exceptional Selections",
-      description:
-        "We specialize in rare and exotic species, from vibrant cichlids and majestic angelfish to unique invertebrates and everything in between. Whether you're a seasoned aquarist or just starting, you'll find something extraordinary at Lakeview Aquatics.",
-      image: "/images/about.jpg",
-    },
-    "Expert Knowledge": {
-      title: "Guided by Expertise: Knowledge You Can Trust",
-      description:
-        "Our team is composed of experienced aquarists who are passionate about sharing their knowledge. We're here to assist you with everything from selecting the right fish for your tank to offering tips on care, feeding, and habitat setup.",
-      image: "/images/about_2.jpg",
-    },
-    "Customer Satisfaction": {
-      title: "Commitment to Customer Delight",
-      description:
-        "Your satisfaction is our top priority. We strive to provide excellent customer service, whether you're visiting our store or shopping online. We're always ready to answer your questions and ensure you have a positive experience with us",
-      image: "/images/about_3.jpg",
-    },
-    "Explore Our World": {
-      title: "Discover the World of Lakeview",
-      description:
-        "At Lakeview Aquatics, we believe that every aquarium should be a reflection of nature's beauty and diversity. That's why we continuously expand our collection, bringing you the latest and most sought-after species in the aquatics world. We invite you to explore our store, where every visit promises new discoveries and inspiration for your aquatic environment.",
-      image: "/images/Glowing.jpg",
-    },
-  };
   return (
     <div
       className={`${poppins.className} z-10 min-h-screen w-full md:w-[83vw] items-center justify-center text-sm lg:flex flex-col md:mb-20`}
@@ -162,4 +131,3 @@ const About = () => {
 };
 
 export default About;
-
