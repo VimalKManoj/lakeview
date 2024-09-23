@@ -12,7 +12,7 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-export default function page() {
+export default function Page() {
   const ref = useRef(null);
 
   const isInView = useInView(ref, { once: true, threshold: 0.5 });
@@ -56,14 +56,14 @@ export default function page() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           At Lakeview Aquatics, we are passionate about creating stunning
-          aquatic environments that go beyond the ordinary. Whether you're
+          aquatic environments that go beyond the ordinary. Whether you’re
           looking to enhance your home, corporate space, pub, or brewery, we
           offer a range of professional aquarium services to help you design and
           maintain breathtaking aquatic displays. Our services combine
           aesthetics, expert care, and attention to detail, ensuring that your
           aquatic installations are as captivating as they are sustainable.
         </motion.h2>
-     
+
         <motion.section
           className={`${poppins.className} flex flex-col justify-center items-center p-4 md:p-10  w-full`}
           variants={{
@@ -130,7 +130,7 @@ export default function page() {
                 />
               </div>
               <Sub>
-                Aquascaping is more than just an aquarium—it's an art form. Our
+                Aquascaping is more than just an aquarium—it’s an art form. Our
                 team specializes in designing aquatic landscapes that mimic
                 natural environments, providing a peaceful and visually
                 appealing focal point for your space. We use high-quality
@@ -217,7 +217,7 @@ export default function page() {
               </ul>
 
               <Sub>
-                Whether you're starting a new aquarium or looking to enhance an
+                Whether you’re starting a new aquarium or looking to enhance an
                 existing one, we provide the knowledge you need to create a
                 thriving ecosystem.
               </Sub>
