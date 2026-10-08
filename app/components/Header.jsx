@@ -50,7 +50,7 @@ const Header = () => {
         style={{ color, padding, paddingTop }}
       >
         <Link className="font-bold px-16" href="/">
-          <Image src="/images/Logo.png" width={200} height={200} />
+          <Image src="/images/Logo.webp" width={200} height={200} />
         </Link>
         <div className="flex gap-10 px-20">
           <Link href="/#about">About Us</Link>

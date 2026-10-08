@@ -15,7 +15,7 @@ const MobileNavBar = () => {
   return (
     <nav className="md:hidden fixed top-0 bg-white  text-white p-4 flex items-center justify-between z-50 w-full">
       <Link href="/">
-        <Image src="/images/Logo.png" width={120} height={60} />
+        <Image src="/images/Logo.webp" width={120} height={60} />
       </Link>
       <div className="cursor-pointer" onClick={toggleMenu}>
         {isOpen ? (
